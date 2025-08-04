@@ -1,9 +1,21 @@
+# VScode 다운로드 페이지
 https://code.visualstudio.com/download
 
+# C:\Users\사용자\.ssh\config 접속 후 파일 수정
+Host gate2
+    HostName 172.16.10.37
+    Port 22
+    User 팀계정(수정 필요)
+    IdentityFile 팀계정.pem(.pem 위치 경로로 수정 필요)
+
+# Miniconda 설치 파일 다운로드
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
+# Miniconda 설치
 bash Miniconda3-latest-Linux-x86_64.sh
 
+# 가상 환경 내 필요 패키지 일괄 설치
 pip install -r requirements.txt
 
+# 작업(job) 던지는 명령 문구(n000 -> 팀 할당 노드로 변경, ex. n001/n107)
 sbatch --reservation=hackathon_n000 ./run.sh
